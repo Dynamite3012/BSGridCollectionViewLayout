@@ -78,7 +78,7 @@ public final class GridCollectionViewLayout: UICollectionViewLayout {
             return CGSize.zero
         }
         
-        let height = estimatedRowHeight() * CGFloat(rows)
+        let height = estimatedRowHeight() * CGFloat(rows) - itemSpacing
         return CGSize(width: collectionView.bounds.width, height: height)
     }
 
@@ -284,6 +284,6 @@ extension GridCollectionViewLayout {
      - returns: Row height
      */
     func estimatedRowHeight() -> CGFloat {
-        return itemSize.height+itemSpacing
+        return itemSize.height + itemSpacing
     }
 }
